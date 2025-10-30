@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Employee Attendance System</title>
+<link rel="stylesheet" href="styles.css" />
+<!-- Signature Pad library -->
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.min.js"></script>
+<!-- SheetJS library -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+<header>
+  <h1>MARTA Training Attendance System</h1>
+</header>
+
+<main>
+  <section id="employee-section" class="card">
+    <h2>Employee Sign-In</h2>
+    <form id="employee-form">
+      <label>
+        Employee Work ID:
+        <input type="text" id="empId" required />
+      </label>
+      <label>
+        Employee Badge ID:
+        <input type="text" id="empbId" required />
+      </label>
+      <label>
+        Employee First Name:
+        <input type="text" id="empfName" required />
+      </label>
+      <label>
+        Employee Last Name:
+        <input type="text" id="emplName" required />
+      </label>
+      <label>
+        Employee Email Address:
+        <input type="email" id="empEmail" required />
+      </label>
+      <div>
+        <p>Signature:</p>
+        <canvas id="employee-signature-pad" class="signature-pad"></canvas>
+        <button type="button" id="clear-emp-sign">Clear Signature</button>
+      </div>
+      <button type="submit">Sign Attendance</button>
+    </form>
+  </section>
+
+  <section id="attendance-list" class="card">
+    <h2>Attendance Records</h2>
+    <table id="attendance-table">
+      <thead>
+        <tr>
+          <th>Emp ID</th>
+          <th>Badge ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email Address</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <button id="export-pdf">Download PDF</button>
+    <button id="export-excel">Download Excel</button>
+  </section>
+
+  <section id="officer-section" class="card">
+    <h2>Trainer Sign-Off</h2>
+    <form id="officer-form">
+      <label>
+        Trainer ID:
+        <input type="text" id="officerId" required />
+      </label>
+      <label>
+        Trainer Name:
+        <input type="text" id="officerName" required />
+      </label>
+      <label>
+        Trainer Email:
+        <input type="email" id="officerEmail" required />
+      </label>
+      <div>
+        <p>Signature:</p>
+        <canvas id="officer-signature-pad" class="signature-pad"></canvas>
+        <button type="button" id="clear-officer-sign">Clear Signature</button>
+      </div>
+      <button type="submit">Save Trainer Signature</button>
+    </form>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html
